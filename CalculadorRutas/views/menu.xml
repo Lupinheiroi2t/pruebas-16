@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="route_calculator_action" model="ir.actions.act_window">
+        <field name="name">Route Calculator</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">route.calculator</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+    <menuitem
+        id="route_calculator_menu"
+        name="Route Calculator"
+        action="route_calculator_action"
+        sequence="1"/>
+
+</odoo>
