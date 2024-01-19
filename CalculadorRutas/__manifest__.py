@@ -13,6 +13,7 @@
     "data": [
         "security/ir.model.access.csv",        
         "views/city_views.xml",
+        "views/connection_views.xml",
         "views/route_calculator.xml",
         "views/menu.xml",
     ],
