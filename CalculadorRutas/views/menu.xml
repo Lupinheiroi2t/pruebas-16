@@ -14,4 +14,20 @@
         action="route_calculator_action"
         sequence="1"/>
 
+
+    <record id="route_calculator_city_action" model="ir.actions.act_window">
+        <!-- <field name="name">Tickets</field> -->
+        <field name="res_model">city</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <!-- <field name="target">new</field> -->
+    </record>
+
+    <menuitem 
+            id="calculator_ruta_city_menu_item_1"
+            name="Citys"
+            parent="route_calculator_menu"
+            action="route_calculator_city_action"
+            sequence="1" />
+
+
 </odoo>
