@@ -15,4 +15,6 @@ class ConnectionType(models.Model):
     _description = "Connection"
 
     name = fields.Char(String="Type")
+    origin = fields.Char(String="Origin")
+    destination = fields.Char(String="Destination")
    
