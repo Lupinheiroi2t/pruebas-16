@@ -12,7 +12,7 @@ class Connection(models.Model):
 
 class ConnectionType(models.Model):
     _name = "connection.type"
-    _description = "Connection"
+    _description = "Connection Type"
 
     name = fields.Char(String="Type")
     origin = fields.Char(String="Origin")
