@@ -49,7 +49,7 @@
     <menuitem 
             id="calculator_ruta_connection_menu_item_2_1"
             name="Connections Type"
-            parent="route_calculator_menu.calculator_ruta_connection_menu_item_2"
+            parent="CalculadorRutas.calculator_ruta_connection_menu_item_2"
             action="route_calculator_connection_type_action"
             sequence="2" />
 
