@@ -38,7 +38,7 @@
             id="calculator_ruta_connection_menu_item_2"
             name="Connections"
             parent="route_calculator_menu"
-            action="route_calculator_city_action"
+            action="route_calculator_connection_action"
             sequence="2" />
 
 
