@@ -9,4 +9,10 @@ class Connection(models.Model):
     _description = "Connection"
 
     name = fields.Char(String="Connection")
+
+class ConnectionType(models.Model):
+    _name = "connection.type"
+    _description = "Connection"
+
+    name = fields.Char(String="Type")
    

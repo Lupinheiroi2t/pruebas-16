@@ -31,7 +31,6 @@
     <record id="route_calculator_connection_action" model="ir.actions.act_window">
         <field name="res_model">connection</field>
         <field name="view_mode">tree,form,pivot,graph</field>
-        <!-- <field name="target">new</field> -->
     </record>
 
     <menuitem 
@@ -39,6 +38,19 @@
             name="Connections"
             parent="route_calculator_menu"
             action="route_calculator_connection_action"
+            sequence="2" />
+    
+    
+    <record id="route_calculator_connection_type_action" model="ir.actions.act_window">
+        <field name="res_model">connection</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+    </record>
+
+    <menuitem 
+            id="calculator_ruta_connection_menu_item_2_1"
+            name="Connections Type"
+            parent="route_calculator_menu.calculator_ruta_connection_menu_item_2"
+            action="route_calculator_connection_type_action"
             sequence="2" />
 
 
