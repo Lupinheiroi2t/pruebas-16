@@ -18,9 +18,9 @@ class Connection(models.Model):
     def _compute_connections(self):
         for connection in self:
             try:
-                if not connection.origin and not connection.destination:
+                if not connection.origin or not connection.destination:
                     raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
-                if connection.origin.name != "Barcelona" and connection.destination.name != "Paris":
+                if connection.origin.name == "Barcelona" and connection.destination.name == "Paris":
                     raise ValidationError("No existe ruta válida para estas ciudades'.")
                 
                 name = f"{connection.origin.name} - {connection.destination.name}"
