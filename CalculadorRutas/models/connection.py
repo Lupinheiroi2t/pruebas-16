@@ -9,7 +9,9 @@ class Connection(models.Model):
     _description = "Connection"
 
     name = fields.Char()
-    type = fields.Char(string="Type")
-    origin = fields.Many2one("city",string="Origin")
-    destination = fields.Char("city", string="Destination")
+    type = fields.Char()
+    origin = fields.Many2one("city")
+    destination = fields.Char("city")
+
+
 
