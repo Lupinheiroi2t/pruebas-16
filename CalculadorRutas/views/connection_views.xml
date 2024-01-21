@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <tree string="">
                 <field name="name" string="Connection" readonly="1" />
-                <field name="type" string="Type"/>
+                <field name="type_id" string="Type"/>
                 <field name="origin" string="Origin"/>
                 <field name="destination" string="Destination" />
             </tree>
