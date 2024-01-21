@@ -6,7 +6,7 @@
         <field name="model">route.calculator</field>
         <field name="arch" type="xml">
             <tree string="">
-                <field name="type_id" string="Connection Type"/>
+                <field name="type_id" string="Type"/>
                <field name="connection_id" domain="[('name','=', type_id)]" attrs="{'readonly':[('type_id', '=', False)]}"/>
             </tree>
         </field>
@@ -19,7 +19,7 @@
             <form string="">
                 <sheet>
                     <group>
-                        <field name="type_id" string="Connection Type"/>
+                        <field name="type_id" string="Type"/>
                         <field name="connection_id" domain="[('name','=', type_id)]" attrs="{'readonly':[('type_id', '=', False)]}"/>
                     </group>
                 </sheet>
