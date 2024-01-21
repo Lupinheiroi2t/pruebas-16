@@ -10,5 +10,5 @@ class RouteCalculator(models.Model):
 
     name = fields.Char(related='connection_id.name')
     connection_id = fields.Many2one("connection")
-    type_id = fields.Many2one("connection.type")
+    type_id = fields.Many2one("connection.type", related='connection_id.type_id' )
  
