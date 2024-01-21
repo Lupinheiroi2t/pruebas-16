@@ -6,10 +6,11 @@
         <field name="model">connection</field>
         <field name="arch" type="xml">
             <tree string="">
-                <field name="name" readonly="1" />
+                <field name="name" />
                 <field name="type" string="Type"/>
                 <field name="origin" string="Origin"/>
                 <field name="destination" string="Destination" />
+                 <field name="connection" readonly="1" />
             </tree>
         </field>
     </record>
