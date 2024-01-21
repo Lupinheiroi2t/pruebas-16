@@ -20,7 +20,7 @@
         <field name="arch" type="xml">
             <tree string="">
                 <field name="name" string="Type"/>
-                <field name="attribute_id" string="Atributes"/>
+                <field name="attribute_ids" string="Atributes"/>
             </tree>
         </field>
     </record>
