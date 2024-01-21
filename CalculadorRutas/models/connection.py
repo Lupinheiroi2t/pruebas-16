@@ -9,7 +9,7 @@ class Connection(models.Model):
     _description = "Connection"
 
     name = fields.Char(string="Conexión", compute="_compute_connections", store=True)
-    type = fields.Many2one("connection.type")
+    type_id = fields.Many2one("connection.type")
     origin = fields.Many2one("city")
     destination = fields.Many2one("city")
 

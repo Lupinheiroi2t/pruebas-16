@@ -10,4 +10,4 @@ class Attribute(models.Model):
     _description = "Attribute"
 
     name = fields.Char()
-    valor = fields.Char()
+
