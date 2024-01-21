@@ -10,6 +10,6 @@ class Connection(models.Model):
 
     name = fields.Char(string="Type")
 
-    origin = fields.Char(string="Origin")
+    origin = fields.Many2one("city",string="Origin")
     destination = fields.Char(string="Destination")
 
