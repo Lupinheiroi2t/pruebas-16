@@ -18,10 +18,10 @@ class Connection(models.Model):
     @api.depends('origin', 'destination')
     def _compute_connections(self):
         for connection in self:
-            if not connection.origin or not connection.destination:
-                    raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
             name = f"{connection.origin.name} - {connection.destination.name}"
             connection.name = name
+            if not connection.origin or not connection.destination:
+                raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
     
 
     api.constrains('origin', 'destination')
