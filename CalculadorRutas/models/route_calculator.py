@@ -14,12 +14,12 @@ class RouteCalculator(models.Model):
     type_id = fields.Many2one("connection.type")
 
  
-    @api.model
-    def write(self, values): 
-        for record in self:
-            if values['connection_id'] == True:
-                raise ValidationError('"¡Feliz viaje!"')
-            return record
+    # @api.model
+    # def write(self, values): 
+    #     for record in self:
+    #         if values['connection_id'] == True:
+    #             raise ValidationError('"¡Feliz viaje!"')
+    #         return record
     
         # @api.model
     # def write(self, values):  #esos métodos tienen argumentos posicionales 
