@@ -21,51 +21,27 @@ class Connection(models.Model):
             connection.name = name
             if not connection.origin or not connection.destination:
                 raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
-            if (
-                connection.origin.name == 'Paris' and
-                connection.destination.name == 'Barcelona'
-            ):
-                raise ValidationError('No es posible conectar Paris con Barcelona.')
-                 
-                 
-                 
-        
+            if connection.origin.name == 'Barcelona' and connection.destination.name == 'Paris' == True:
+                continue
+            elif connection.origin.name == 'Barcelona' and connection.destination.name == 'Roma' == True:
+                continue
+            else:
+                raise ValidationError('No existe una válida entre Paris y Barcelona.')
 
+                 
+         
     # @api.constrains('origin', 'destination')
-    # def _compute_destination(self):
-    #     for connection in self:
-    #         if not connection.origin or not connection.destination:
-    #             raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
-    #         if  connection.origin == "paris" and  connection.destination == "barcelona":
-    #             raise ValidationError("No existe ruta válida para estas ciudades'.")
-
-
-    
-    # city_connection_ids = fields.Selection(
-    #     selection=[
-    #         ("paris", "Paris"),
-    #         ("barcelona", "Barcelona"),
-    #         ("madrid", "Madrid"),
-    #         ("roma", "Roma"),
-    #         ("valencia", "Valencia"),
-    #         ("malta", "malta"),
-    #     ],)
-    
-    # origin = fields.Selection(related='city_connection_ids.origin')
-    # destination = fields.Selection(compute="_compute_destination", related='city_connection_ids.destination')
-
-    # @api.constrains('origin', 'destination')
-    # def _compute_destination(self):
-    #     for connection in self:
-    #         if not connection.origin or not connection.destination:
-    #             raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
-    #         if  connection.origin == "paris" and  connection.destination == "barcelona":
-    #             raise ValidationError("No existe ruta válida para estas ciudades'.")
-            
-            
-    # @api.deprends('origin', 'destination')
     # def _compute_connections(self):
     #     for connection in self:
     #         name = f"{connection.origin.name} - {connection.destination.name}"
     #         connection.name = name
-
+    #         if not connection.origin or not connection.destination:
+    #             raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
+    #         if (
+    #             connection.origin.name == 'Paris' and
+    #             connection.destination.name == 'Barcelona'
+    #         ):
+    #             raise ValidationError('No existe una válida entre Paris y Barcelona.')
+                 
+                 
+                 
