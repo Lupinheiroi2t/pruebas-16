@@ -24,8 +24,11 @@ class Connection(models.Model):
             if connection.origin.name == 'Paris' and connection.destination.name == 'Barcelona':
                 raise ValidationError('No existe ruta válida entre Paris y Barcelona.')
             if  connection.origin.name == 'Roma' and connection.destination.name == 'Barcelona':
-                raise ValidationError('No existe una válida entre Roma y Barcelona.')
-
+                raise ValidationError('No existe ruta válida entre Roma y Barcelona.')
+            if  connection.origin.name == 'Roma' and connection.destination.name == 'Barcelona':
+                raise ValidationError('No existe ruta válida entre Roma y Barcelona.')
+            if  connection.origin.name == 'Malta' and connection.destination.name == 'Valencia':
+                raise ValidationError('No existe ruta válida entre Malta y Valencia.')
 
                  
          
