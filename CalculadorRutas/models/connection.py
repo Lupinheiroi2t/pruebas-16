@@ -1,7 +1,7 @@
 # © 2023 Lu Pinheiro (<https://github.com/Lucpinheiro>)
 # License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
 
-from odoo import fields, models, _, _lt
+from odoo import fields, models
 
 
 class Connection(models.Model):
@@ -9,16 +9,7 @@ class Connection(models.Model):
     _description = "Connection"
 
     name = fields.Char(string="Type")
-    city_ids = fields.Many2many("citys", string="citys")
+    city_ids = fields.Many2many("citys", string="Citys")
     origin = fields.Char(string="Origin")
-    destination = fields.Char(String="Destination")
+    destination = fields.Char(string="Destination")
 
-class ConnectionType(models.Model):
-    _name = "connection.type"
-    _description = "Connection Type"
-
-    name = fields.Char(string="Type")
-    citys = fields.Many2many("citys")
-    origin = fields.Char(string="Origin")
-    destination = fields.Char(String="Destination")
-   
