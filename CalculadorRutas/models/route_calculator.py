@@ -8,6 +8,6 @@ class RouteCalculator(models.Model):
     _name = "route.calculator"
     _description = "Route Calculator"
 
-    name = fields.Char()
+    name = fields.Char(related='connection_id.name')
     connection_id = fields.Many2one("connection")
-    route_connection_ids = fields.Many2one("connection", related='connection_id.route_connection_ids')
+ 

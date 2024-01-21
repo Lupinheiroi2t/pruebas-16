@@ -6,7 +6,7 @@
         <field name="model">route.calculator</field>
         <field name="arch" type="xml">
             <tree string="">
-                 <field name="route_connection_ids" />
+                 <field name="name" />
             </tree>
         </field>
     </record>
