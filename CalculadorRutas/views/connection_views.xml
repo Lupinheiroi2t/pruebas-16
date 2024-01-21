@@ -19,7 +19,8 @@
         <field name="model">connection.type</field>
         <field name="arch" type="xml">
             <tree string="">
-                <field name="type" string="Type"/>
+                <field name="name" string="Type"/>
+                <field name="attribute_id" string="Atributes"/>
             </tree>
         </field>
     </record>
