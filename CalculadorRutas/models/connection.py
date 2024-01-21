@@ -15,6 +15,7 @@ class ConnectionType(models.Model):
     _description = "Connection Type"
 
     name = fields.Char(string="Type")
+    citys = fields.Many2many("city")
     origin = fields.Char(string="Origin")
     destination = fields.Char(String="Destination")
    
