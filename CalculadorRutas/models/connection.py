@@ -8,7 +8,7 @@ class Connection(models.Model):
     _name = "connection"
     _description = "Connection"
 
-    name = fields.Char(compute="_compute_connections")
+    name = fields.Char(compute="_compute_connections", string="Conexión", store=True)
     type = fields.Char()
     origin = fields.Many2one("city")
     destination = fields.Many2one("city")
