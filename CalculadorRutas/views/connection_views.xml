@@ -6,7 +6,7 @@
         <field name="model">connection</field>
         <field name="arch" type="xml">
             <tree string="">
-                <field name="tiype" string="Type"/>
+                <field name="type" string="Type"/>
           
                 <field name="origin" string="Origin"/>
                 <field name="destination" string="Destination" />
