@@ -15,7 +15,7 @@ class Connection(models.Model):
 
 
             
-    @api.depends('origin', 'destination')
+    @api.constrains('origin', 'destination')
     def _compute_connections(self):
         for connection in self:
             name = f"{connection.origin.name} - {connection.destination.name}"
@@ -23,6 +23,14 @@ class Connection(models.Model):
             if not connection.origin or not connection.destination:
                 raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
     
+
+    # @api.constrains('origin', 'destination')
+    # def _compute_destination(self):
+    #     for connection in self:
+    #         if not connection.origin or not connection.destination:
+    #             raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
+    #         if  connection.origin == "paris" and  connection.destination == "barcelona":
+    #             raise ValidationError("No existe ruta válida para estas ciudades'.")
 
     api.constrains('origin', 'destination')
     def _check_campos_relacionados_validos(self):
