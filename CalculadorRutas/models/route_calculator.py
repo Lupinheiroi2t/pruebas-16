@@ -15,7 +15,7 @@ class RouteCalculator(models.Model):
 
  
     @api.model
-    def write(self, values): 
+    def create(self, values): 
         for record in self:
             if values['connection_id'] == True:
                 raise ValidationError('"¡Feliz viaje!"')
