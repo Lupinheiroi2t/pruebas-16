@@ -10,4 +10,4 @@ class RouteCalculator(models.Model):
 
     name = fields.Char()
     connection_ids = fields.Many2one("connection")
-    route_connection_ids = fields.Char(related='connection_ids.route_connection_ids')
+    route_connection_ids = fields.Many2one("connection", related='connection_ids.route_connection_ids')
