@@ -30,20 +30,10 @@ class Connection(models.Model):
             if  connection.origin.name == 'Malta' and connection.destination.name == 'Valencia':
                 raise ValidationError('No existe ruta válida entre Malta y Valencia.')
 
-                 
-         
-    # @api.constrains('origin', 'destination')
-    # def _compute_connections(self):
-    #     for connection in self:
-    #         name = f"{connection.origin.name} - {connection.destination.name}"
-    #         connection.name = name
-    #         if not connection.origin or not connection.destination:
-    #             raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
-    #         if (
-    #             connection.origin.name == 'Paris' and
-    #             connection.destination.name == 'Barcelona'
-    #         ):
-    #             raise ValidationError('No existe una válida entre Paris y Barcelona.')
-                 
-                 
-                 
+
+class ConnectionType(models.Model):
+    _name = "connection.type"
+    _description = "Connection Type"
+
+    name = fields.Char()
+    type = fields.Char()

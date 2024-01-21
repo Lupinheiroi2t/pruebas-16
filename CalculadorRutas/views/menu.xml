@@ -67,7 +67,7 @@
     
 
 
-<!--     
+
     <record id="route_calculator_connection_type_action" model="ir.actions.act_window">
         <field name="res_model">connection.type</field>
         <field name="view_mode">tree,form,pivot,graph</field>
@@ -78,7 +78,7 @@
             name="Connections Type"
             parent="CalculadorRutas.calculator_ruta_connection_menu_item_2"
             action="route_calculator_connection_type_action"
-            sequence="2" /> -->
+            sequence="1" />
 
 
 </odoo>
