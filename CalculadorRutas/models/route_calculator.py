@@ -9,3 +9,4 @@ class RouteCalculator(models.Model):
     _description = "Route Calculator"
 
     name = fields.Char()
+    connection_ids = fields.Many2one("connection")
