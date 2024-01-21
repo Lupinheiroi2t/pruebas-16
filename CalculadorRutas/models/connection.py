@@ -10,14 +10,13 @@ class Connection(models.Model):
 
     name = fields.Char()
     type = fields.Char()
+    origin = fields.Many2one("city")
+    destination = fields.Many2one("city")
+    connection = fields.Char(string="Conexión", compute="_compute_connections", store=True)
 
 
-    ciudad_origen = fields.Many2one('city', required=True)
-    ciudad_destino = fields.Many2one('city', required=True)
-
-    @api.depends('ciudad_origen', 'ciudad_destino')
-    def _compute_suma_ciudades(self):
-        for ruta in self:
-            ruta.suma_ciudades = f"{ruta.ciudad_origen} - {ruta.ciudad_destino}"
-
-    suma_ciudades = fields.Char(string='Suma de Ciudades', compute='_compute_suma_ciudades', store=True)
+    @api.depends('origin.city', 'destination.city')
+    def _compute_connections(self):
+        for registro in self:
+            connection = f"{registro.origin.name} - {registro.destination.name}"
+            registro.connection = connection
