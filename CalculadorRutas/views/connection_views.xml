@@ -24,4 +24,14 @@
         </field>
     </record>
 
+    <record id="atribute_type_view_tree" model="ir.ui.view">
+        <field name="name">atribute.type.view.tree</field>
+        <field name="model">attribute</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="name" string="Attribute"/>
+            </tree>
+        </field>
+    </record>
+
 </odoo>

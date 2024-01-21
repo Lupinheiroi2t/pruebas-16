@@ -1,7 +1,7 @@
 # © 2023 Lu Pinheiro (<https://github.com/Lucpinheiro>)
 # License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
 {
-    "name": "Route Calculator LULU",
+    "name": "Route Calculator",
     "summary": """
     """,
     "author": "Lu Pinheiro",

@@ -78,7 +78,20 @@
             name="Connections Type"
             parent="CalculadorRutas.calculator_ruta_connection_menu_item_2"
             action="route_calculator_connection_type_action"
-            sequence="1" />
+            sequence="2" />
+    
+    <record id="route_calculator_type_attribute_action" model="ir.actions.act_window">
+        <field name="res_model">attribute</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem 
+            id="calculator_ruta_connection_menu_item_2_2"
+            name="Atributes"
+            parent="CalculadorRutas.calculator_ruta_connection_menu_item_2"
+            action="route_calculator_type_attribute_action"
+            sequence="3" />
+        
 
 
 </odoo>

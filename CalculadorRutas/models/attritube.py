@@ -5,9 +5,9 @@ from odoo import fields, models, api
 from odoo.exceptions import ValidationError, UserError
 
 
-class ConnectionType(models.Model):
-    _name = "connection.type"
-    _description = "Connection Type"
+class Attribute(models.Model):
+    _name = "attribute"
+    _description = "Attribute"
 
     name = fields.Char()
-    type = fields.Many2one("attribute")
+    valor = fields.Char()
