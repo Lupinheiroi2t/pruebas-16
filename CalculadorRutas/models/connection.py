@@ -8,15 +8,15 @@ class Connection(models.Model):
     _name = "connection"
     _description = "Connection"
 
-    name = fields.Char()
+    name = fields.Char(string="Conexión", compute="_compute_connections", store=True)
     type = fields.Char()
     origin = fields.Many2one("city")
     destination = fields.Many2one("city")
-    connection = fields.Char(string="Conexión", compute="_compute_connections", store=True)
+
 
 
     @api.depends('origin', 'destination')
     def _compute_connections(self):
-        for registro in self:
-            connection = f"{registro.origin.name} - {registro.destination.name}"
-            registro.connection = connection
+        for connection in self:
+            name = f"{connection.origin.name} - {connection.destination.name}"
+            connection.name = name
