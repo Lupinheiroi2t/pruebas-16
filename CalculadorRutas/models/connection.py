@@ -1,7 +1,7 @@
 # © 2023 Lu Pinheiro (<https://github.com/Lucpinheiro>)
 # License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
 
-from odoo import fields, models
+from odoo import fields, models, api 
 
 
 class Connection(models.Model):
@@ -14,9 +14,10 @@ class Connection(models.Model):
     destination = fields.Many2one("city")
 
 
+    @api.depends('origin', 'destination')
     def _compute_connections(self):
-        for connection in self:
-            connection.name = '%s - %s' % (connection.origin, connection.destination)
+        for route in self:
+            route.name = f"{route.origin} - {route.destination}"
 
              
 
