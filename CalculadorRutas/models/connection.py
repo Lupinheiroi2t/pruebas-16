@@ -21,8 +21,16 @@ class Connection(models.Model):
             connection.name = name
             if not connection.origin or not connection.destination:
                 raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
-            if connection.origin.name.lower() == 'paris' and connection.destination.name.lower() == 'paris':
-                 raise ValidationError("No existe ruta válida para estas ciudades'.")
+            if (
+                        connection.origin.name.lower() == 'paris' and
+                        connection.destination.name.lower() != 'barcelona'
+                    ) or (
+                        connection.origin.name.lower() != 'paris' and
+                        connection.destination.name.lower() == 'barcelona'
+                    ):
+                        raise ValidationError("Las conexiones deben ser entre 'Paris' y 'Barcelona'.")
+
+
 
 
     # @api.constrains('origin', 'destination')
