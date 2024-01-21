@@ -12,8 +12,8 @@ class Connection(models.Model):
     type = fields.Char()
 
 
-    ciudad_origen = fields.Char(string='Ciudad de Origen', required=True)
-    ciudad_destino = fields.Char(string='Ciudad de Destino', required=True)
+    ciudad_origen = fields.Many2one('city', string='Ciudad de Origen', required=True)
+    ciudad_destino = fields.Char('city', string='Ciudad de Destino', required=True)
 
     @api.depends('ciudad_origen', 'ciudad_destino')
     def _compute_suma_ciudades(self):
