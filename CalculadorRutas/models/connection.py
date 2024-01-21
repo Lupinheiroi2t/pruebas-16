@@ -24,5 +24,3 @@ class Connection(models.Model):
             
             name = f"{connection.origin.name} - {connection.destination.name}"
             connection.name = name
-
-
