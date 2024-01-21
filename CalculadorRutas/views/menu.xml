@@ -86,7 +86,7 @@
     </record>
 
     <menuitem 
-            id="calculator_ruta_connection_menu_item_2_2"
+            id="calculator_ruta_connection_menu_item_2_3"
             name="Atributes"
             parent="CalculadorRutas.calculator_ruta_connection_menu_item_2"
             action="route_calculator_type_attribute_action"
