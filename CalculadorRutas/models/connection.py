@@ -8,7 +8,7 @@ class Connection(models.Model):
     _name = "connection"
     _description = "Connection"
 
-    name = fields.Char(string="Connection")
+    name = fields.Char(String="Connection")
 
 class ConnectionType(models.Model):
     _name = "connection.type"
