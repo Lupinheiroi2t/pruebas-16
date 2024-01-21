@@ -8,9 +8,9 @@
             <tree string="">
                 <field name="name" />
                 <field name="type" string="Type"/>
-                <field name="ciudad_origen" string="Origin"/>
-                <field name="ciudad_destino" string="Destination" />
-                 <field name="suma_ciudades" readonly="1" />
+                <field name="origin" string="Origin"/>
+                <field name="destination" string="Destination" />
+                 <field name="connection" readonly="1" />
             </tree>
         </field>
     </record>
