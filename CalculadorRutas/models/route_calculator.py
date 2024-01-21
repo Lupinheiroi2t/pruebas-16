@@ -14,23 +14,28 @@ class RouteCalculator(models.Model):
     type_id = fields.Many2one("connection.type")
 
 
+    @api.onchange('name', 'connection_id', 'type_id')
+    def _onchange_notify_info(self):
+        # Muestra un mensaje informativo al usuario actual
+        self.env.user.notify_info(message="¡Registro guardado exitosamente!")
 
-    @api.model
-    def create(self, values):
-        # Llama al método create de la clase base para realizar la creación del registro
-        record = super(RouteCalculator, self).create(values)
 
-        # Agrega un mensaje informativo al registro recién creado
-        message = "¡Registro creado! ¡Feliz viaje!"
-        self.env['mail.message'].create({
-                'model': 'route.calculator',
-                'res_id': record.id,
-                'body': message,
-                'subject': 'Información',
-                'message_type': 'comment',
-            })
+    # @api.model
+    # def create(self, values):
+    #     # Llama al método create de la clase base para realizar la creación del registro
+    #     record = super(RouteCalculator, self).create(values)
 
-        return record
+    #     # Agrega un mensaje informativo al registro recién creado
+    #     message = "¡Registro creado! ¡Feliz viaje!"
+    #     self.env['mail.message'].create({
+    #             'model': 'route.calculator',
+    #             'res_id': record.id,
+    #             'body': message,
+    #             'subject': 'Información',
+    #             'message_type': 'comment',
+    #         })
+
+    #     return record
  
 
 
