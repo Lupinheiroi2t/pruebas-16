@@ -40,6 +40,18 @@
             action="route_calculator_connection_action"
             sequence="2" />
     
+        
+    <record id="route_calculator_connection_citys_action" model="ir.actions.act_window">
+        <field name="res_model">connection</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+    </record>
+
+    <menuitem 
+            id="calculator_ruta_connection_citys_menu_item_2_1"
+            name="Connections"
+            parent="CalculadorRutas.calculator_ruta_connection_menu_item_2"
+            action="route_calculator_connection_citys_action"
+            sequence="1" />
     
     <record id="route_calculator_connection_type_action" model="ir.actions.act_window">
         <field name="res_model">connection</field>
@@ -47,7 +59,7 @@
     </record>
 
     <menuitem 
-            id="calculator_ruta_connection_menu_item_2_1"
+            id="calculator_ruta_connection_menu_item_2_2"
             name="Connections Type"
             parent="CalculadorRutas.calculator_ruta_connection_menu_item_2"
             action="route_calculator_connection_type_action"

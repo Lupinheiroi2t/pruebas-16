@@ -8,13 +8,13 @@ class Connection(models.Model):
     _name = "connection"
     _description = "Connection"
 
-    name = fields.Char(String="Connection")
+    name = fields.Char(string="Connection")
 
 class ConnectionType(models.Model):
     _name = "connection.type"
     _description = "Connection Type"
 
-    name = fields.Char(String="Type")
-    origin = fields.Char(String="Origin")
+    name = fields.Char(string="Type")
+    origin = fields.Char(string="Origin")
     destination = fields.Char(String="Destination")
    
