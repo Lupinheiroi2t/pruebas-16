@@ -15,7 +15,7 @@ class Connection(models.Model):
 
 
             
-    @api.deprends('origin', 'destination')
+    @api.depends('origin', 'destination')
     def _compute_connections(self):
         for connection in self:
             name = f"{connection.origin.name} - {connection.destination.name}"
