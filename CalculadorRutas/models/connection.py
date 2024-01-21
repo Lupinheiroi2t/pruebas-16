@@ -9,7 +9,7 @@ class Connection(models.Model):
     _description = "Connection"
 
     name = fields.Char(string="Conexión", compute="_compute_connections", store=True)
-    type = fields.Char()
+    type = fields.Many2one("connection.type")
     origin = fields.Many2one("city")
     destination = fields.Many2one("city")
 
@@ -29,11 +29,3 @@ class Connection(models.Model):
                 raise ValidationError('No existe ruta válida entre Roma y Barcelona.')
             if  connection.origin.name == 'Malta' and connection.destination.name == 'Valencia':
                 raise ValidationError('No existe ruta válida entre Malta y Valencia.')
-
-
-class ConnectionType(models.Model):
-    _name = "connection.type"
-    _description = "Connection Type"
-
-    name = fields.Char()
-    type = fields.Char()

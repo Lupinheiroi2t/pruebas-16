@@ -10,7 +10,6 @@
                 <field name="type" string="Type"/>
                 <field name="origin" string="Origin"/>
                 <field name="destination" string="Destination" />
-               
             </tree>
         </field>
     </record>
@@ -20,9 +19,7 @@
         <field name="model">connection.type</field>
         <field name="arch" type="xml">
             <tree string="">
-                <field name="name" />
                 <field name="type" string="Type"/>
-               
             </tree>
         </field>
     </record>
