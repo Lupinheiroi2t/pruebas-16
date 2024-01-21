@@ -27,5 +27,5 @@ class Connection(models.Model):
                 connection.name = name
 
             except ValidationError as e:
-                connection.nombre_concatenado = False
+                connection.name = False
 
