@@ -21,14 +21,11 @@ class Connection(models.Model):
             connection.name = name
             if not connection.origin or not connection.destination:
                 raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
-            valor_buscado = 'Paris'  
-            destino_encontrado = self.env['city'].search([('name', '=', valor_buscado)])
-
-        if destino_encontrado:
-            # Hacer algo con el resultado, por ejemplo, imprimir el ID
-            print("ID del destino encontrado:", destino_encontrado.id)
-        else:
-            print("No se encontró ningún destino con el valor deseado.")
+            if (
+                connection.origin.name == 'Paris' and
+                connection.destination.name == 'Barcelona'
+            ):
+                raise ValidationError('No es posible conectar Paris con Barcelona.')
                  
                  
                  
