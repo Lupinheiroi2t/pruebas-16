@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <tree string="">
                 <field name="type_id" string="Connection Type"/>
-                 <field name="connection_id" />
+               <field name="connection_id" domain="[('name','=', type_id)]" attrs="{'readonly':[('type_id', '=', False)]}"/>
             </tree>
         </field>
     </record>
