@@ -13,14 +13,22 @@ class RouteCalculator(models.Model):
     connection_id = fields.Many2one("connection")
     type_id = fields.Many2one("connection.type")
 
- 
+
+
     @api.model
-    def create(self, values): 
-        res = super(RouteCalculator ,self).create(values)
-        if values['connection_id'] == True:
-                raise ValidationError('"¡Feliz viaje!"')
-        return res
-        
+    def create(self, values):
+        # Llama al método create de la clase base para realizar la creación del registro
+        record = super(RouteCalculator, self).create(values)
+
+        # Agrega un mensaje informativo al registro recién creado
+        message = "¡Registro creado! ¡Feliz viaje!"
+        record.message_post(body=message, subtype="mail.mt_note")
+
+        return record
+
+ 
+
+
     # @api.model
     # def create(self, values):
     #     res = super(libreria ,self).create(values)
