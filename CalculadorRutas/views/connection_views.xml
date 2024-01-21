@@ -17,7 +17,7 @@
         <field name="arch" type="xml">
             <tree string="">
                 <field name="name" />
-                <field name="Citys" />
+                <field name="citys" />
                 <field name="origin" />
                 <field name="destination" />
             </tree>
