@@ -10,12 +10,14 @@ class Connection(models.Model):
 
     name = fields.Char()
     type = fields.Char()
-    origin = fields.Char()
-    destination = fields.Char()
-    connection = fields.Char(string="Conexión", compute="_compute_connections", store=True)
 
 
-    @api.depends('origin', 'destination')
-    def _compute_connections(self):
-        for route in self:
-            route.connection = '%s - %s' % (route.origin, route.destination)
+    ciudad_origen = fields.Char(string='Ciudad de Origen', required=True)
+    ciudad_destino = fields.Char(string='Ciudad de Destino', required=True)
+
+    @api.depends('ciudad_origen', 'ciudad_destino')
+    def _compute_suma_ciudades(self):
+        for ruta in self:
+            ruta.suma_ciudades = f"{ruta.ciudad_origen} - {ruta.ciudad_destino}"
+
+    suma_ciudades = fields.Char(string='Suma de Ciudades', compute='_compute_suma_ciudades', store=True)
