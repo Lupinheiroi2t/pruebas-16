@@ -15,7 +15,7 @@ class Connection(models.Model):
     connection = fields.Char(string="Conexión", compute="_compute_connections", store=True)
 
 
-    @api.depends('origin', 'destination.')
+    @api.depends('origin', 'destination')
     def _compute_connections(self):
         for registro in self:
             connection = f"{registro.origin.name} - {registro.destination.name}"
