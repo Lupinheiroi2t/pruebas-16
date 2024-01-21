@@ -14,7 +14,7 @@
         </field>
     </record>
 
-    <record id="connection_type_view_tree" model="ir.ui.view">
+    <!-- <record id="connection_type_view_tree" model="ir.ui.view">
         <field name="name">connection.type.view.tree</field>
         <field name="model">connection.type</field>
         <field name="arch" type="xml">
@@ -25,6 +25,6 @@
                 <field name="destination" />
             </tree>
         </field>
-    </record>
+    </record> -->
 
 </odoo>
