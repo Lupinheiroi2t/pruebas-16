@@ -8,10 +8,18 @@ class Connection(models.Model):
     _name = "connection"
     _description = "Connection"
 
-    name = fields.Char()
+    name = fields.Char(compute='_compute_connections')
     type = fields.Char()
     origin = fields.Many2one("city")
-    destination = fields.Char("city")
+    destination = fields.Many2one("city")
 
 
+    # TODO: funcón computada
+     # Funcion 1.1
+    def _compute_connections(self):
+        for city in self:
+            city.name = (city.origin + city.destination)
+
+            
+             
 
