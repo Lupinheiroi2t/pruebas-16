@@ -9,7 +9,7 @@ class Connection(models.Model):
     _description = "Connection"
 
     name = fields.Char(string="Type")
-    city_ids = fields.Many2many("citys", string="Citys")
+
     origin = fields.Char(string="Origin")
     destination = fields.Char(string="Destination")
 
