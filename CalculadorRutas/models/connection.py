@@ -22,9 +22,9 @@ class Connection(models.Model):
             if not connection.origin or not connection.destination:
                 raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
             if connection.origin.name == 'Barcelona' and connection.destination.name == 'Paris' == True:
-                continue
+                  return True
             if  connection.origin.name == 'Barcelona' and connection.destination.name == 'Roma' == True:
-                continue
+                  return True
             else:
                 raise ValidationError('No existe una válida entre Paris y Barcelona.')
 
