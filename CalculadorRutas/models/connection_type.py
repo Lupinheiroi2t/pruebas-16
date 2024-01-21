@@ -10,4 +10,4 @@ class ConnectionType(models.Model):
     _description = "Connection Type"
 
     name = fields.Char()
-    attribute_id = fields.Many2one("attribute")
+    attribute_ids = fields.Many2many("attribute")
