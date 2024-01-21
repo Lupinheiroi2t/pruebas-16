@@ -20,7 +20,7 @@
                 <sheet>
                     <group>
                         <field name="type_id" string="Type"/>
-                        <field name="connection_id" domain="[('name','=', type_id)]" attrs="{'readonly':[('type_id', '=', False)]}"/>
+                        <field name="connection_id" domain="[('type_id','=', type_id)]" attrs="{'readonly':[('type_id', '=', False)]}"/>
                     </group>
                 </sheet>
             </form>
