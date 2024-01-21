@@ -13,7 +13,6 @@ class Connection(models.Model):
     origin = fields.Many2one("city")
     destination = fields.Many2one("city")
 
-
             
     @api.constrains('origin', 'destination')
     def _compute_connections(self):
@@ -22,7 +21,9 @@ class Connection(models.Model):
             connection.name = name
             if not connection.origin or not connection.destination:
                 raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
-    
+            if connection.origin.name.lower() == 'paris' and connection.destination.name.lower() == 'paris':
+                 raise ValidationError("No existe ruta válida para estas ciudades'.")
+
 
     # @api.constrains('origin', 'destination')
     # def _compute_destination(self):
