@@ -2,6 +2,7 @@
 # License LGPL-3 - See http://www.gnu.org/licenses/lgpl-3.0.html
 
 from odoo import fields, models, api
+from odoo.exceptions import ValidationError
 
 
 class RouteCalculator(models.Model):
@@ -14,10 +15,14 @@ class RouteCalculator(models.Model):
 
  
     @api.model
-    def create(self, values):
-        # Llama al método create de la clase base para realizar la creación del registro
-        record = super(RouteCalculator, self).create(values)
-        # Muestra un mensaje de "Feliz viaje"
-        self.env.user.notify_warning(message="¡Feliz viaje!")
-
-        return record
+    def write(self, values): 
+        for record in self:
+            if values['connection_id'] == True:
+                raise ValidationError('"¡Feliz viaje!"')
+            return record
+    
+        # @api.model
+    # def write(self, values):  #esos métodos tienen argumentos posicionales 
+    #     if self.pages == 0 or self.pages == 300:
+    #         raise ValidationError('No se puede guardar')
+    #     return super(libreria, self).write(values)
