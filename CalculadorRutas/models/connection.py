@@ -20,14 +20,18 @@ class Connection(models.Model):
         for connection in self:
             name = f"{connection.origin.name} - {connection.destination.name}"
             connection.name = name
+    
 
     api.constrains('origin', 'destination')
     def _check_campos_relacionados_validos(self):
             for connection in self:
-                ciudad_origen_name  = connection.ciudad_origen.name.lower()
-                ciudad_origen_name  = connection.ciudad_destino.name.lower()
+                if not connection.origin or not connection.destination:
+                    raise ValidationError("Debe especificar tanto la ciudad de origen como la de destino.")
+                
+                ciudad_origen_name  = connection.origin.name.lower()
+                ciudad_origen_name  = connection.destination.name.lower()
 
-            if ciudad_origen_name == 'paris' and ciudad_origen_name  == 'barcelona':
+            if ciudad_origen_name == 'paris' and ciudad_origen_name == 'barcelona':
                 raise ValidationError("La ciudad de origen no puede ser 'Paris' cuando la ciudad de destino es 'Barcelona'.")
     
     # city_connection_ids = fields.Selection(
