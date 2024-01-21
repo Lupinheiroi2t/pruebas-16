@@ -16,11 +16,20 @@ class RouteCalculator(models.Model):
  
     @api.model
     def create(self, values): 
-        for record in self:
-            if values['connection_id'] == True:
+        res = super(RouteCalculator ,self).create(values)
+        if values['connection_id'] == True:
                 raise ValidationError('"¡Feliz viaje!"')
-            return record
-    
+        return res
+        
+    # @api.model
+    # def create(self, values):
+    #     res = super(libreria ,self).create(values)
+    #     if values.get("pages") == 0:
+    #         values["pages"] = 300  
+    #     return res
+
+
+
         # @api.model
     # def write(self, values):  #esos métodos tienen argumentos posicionales 
     #     if self.pages == 0 or self.pages == 300:
