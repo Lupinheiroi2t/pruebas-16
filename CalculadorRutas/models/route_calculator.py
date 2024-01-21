@@ -22,10 +22,15 @@ class RouteCalculator(models.Model):
 
         # Agrega un mensaje informativo al registro recién creado
         message = "¡Registro creado! ¡Feliz viaje!"
-        record.message_post(body=message, subtype="mail.mt_note")
+        self.env['mail.message'].create({
+                'model': 'route.calculator',
+                'res_id': record.id,
+                'body': message,
+                'subject': 'Información',
+                'message_type': 'comment',
+            })
 
         return record
-
  
 
 
