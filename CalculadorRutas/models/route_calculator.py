@@ -14,14 +14,32 @@ class RouteCalculator(models.Model):
     type_id = fields.Many2one("connection.type")
 
 
-    @api.model
-    def create(self, values):
-        # Call the create method of the base class to perform the record creation
+@api.model
+def create(self, values):
+        # Llama al método create de la clase base para realizar la creación del registro
         record = super(RouteCalculator, self).create(values)
-        if values.get("connection_id") == True:
-            self.env.user.notify_info(message="Operación completada exitosamente.")
+
+        # Añade un mensaje al chatter indicando que el registro se creó manualmente
+        record.message_post(
+            body="¡Registro creado manualmente!",
+            subject="Registro Creado",
+            message_type="notification"
+        )
+
         return record
 
+def write(self, values):
+        # Llama al método write de la clase base para realizar la actualización del registro
+        result = super(RouteCalculator, self).write(values)
+
+        # Añade un mensaje al chatter indicando que el registro se actualizó manualmente
+        self.message_post(
+            body="¡Registro actualizado manualmente!",
+            subject="Registro Actualizado",
+            message_type="notification"
+        )
+
+        return result
 
     # @api.model
     # def create(self, values):
