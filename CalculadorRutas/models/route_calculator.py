@@ -13,14 +13,14 @@ class RouteCalculator(models.Model):
     connection_id = fields.Many2one("connection")
     type_id = fields.Many2one("connection.type")
 
-    @api.model
-    def create(self, values):
-            record = super(RouteCalculator, self).create(values)
-            # Añade una condición if para verificar si 'connection_id' cumple con cierta condición
-            if 'connection_id' in values and values['connection_id']  != False:
-                raise ValidationError('¡Mensaje informativo al usuario!')
+    # @api.model
+    # def create(self, values):
+    #         record = super(RouteCalculator, self).create(values)
+    #         # Añade una condición if para verificar si 'connection_id' cumple con cierta condición
+    #         if 'connection_id' in values and values['connection_id']  != False:
+    #             raise ValidationError('¡Mensaje informativo al usuario!')
 
-            return record
+    #         return record
 
 
 
