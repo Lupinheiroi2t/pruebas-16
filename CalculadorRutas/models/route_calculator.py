@@ -17,7 +17,7 @@ class RouteCalculator(models.Model):
     def create(self, values):
             record = super(RouteCalculator, self).create(values)
             # Añade una condición if para verificar si 'connection_id' cumple con cierta condición
-            if 'connection_id' in values and values['connection_id'] == True:
+            if 'connection_id' in values and values['connection_id']  != False:
                 raise ValidationError('¡Mensaje informativo al usuario!')
 
             return record
