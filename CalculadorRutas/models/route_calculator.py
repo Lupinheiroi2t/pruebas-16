@@ -15,19 +15,10 @@ class RouteCalculator(models.Model):
 
     @api.model
     def create(self, values):
+            record = super(RouteCalculator, self).create(values)
             # Añade una condición if para verificar si 'connection_id' cumple con cierta condición
             if 'connection_id' in values and values['connection_id'] == True:
                 raise ValidationError('¡Mensaje informativo al usuario!')
-
-            # Llama al método create de la clase base para realizar la creación del registro
-            record = super(RouteCalculator, self).create(values)
-
-            # Añade un mensaje al chatter indicando que el registro se creó manualmente
-            record.message_post(
-                body="¡Registro creado manualmente!",
-                subject="Registro Creado",
-                message_type="notification"
-            )
 
             return record
 
