@@ -18,14 +18,8 @@ class RouteCalculator(models.Model):
     def create(self, values):
         # Call the create method of the base class to perform the record creation
         record = super(RouteCalculator, self).create(values)
-
-        # Display an informative message using the _notify method
-        record.env.user._notify(
-            message="¡Registro creado exitosamente!",
-            title="Registro Creado",
-            sticky=True  # Set to True if you want the notification to be sticky
-        )
-
+        if values.get("connection_id") == True:
+            self.env.user.notify_info(message="Operación completada exitosamente.")
         return record
 
 
