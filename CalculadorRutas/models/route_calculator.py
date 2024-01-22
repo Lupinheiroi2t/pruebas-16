@@ -8,6 +8,7 @@ from odoo.exceptions import ValidationError
 class RouteCalculator(models.Model):
     _name = "route.calculator"
     _description = "Route Calculator"
+    _inherit = ['mail.thread', 'mail.activity.mixin'] 
 
     name = fields.Char(related='connection_id.name')
     connection_id = fields.Many2one("connection")
