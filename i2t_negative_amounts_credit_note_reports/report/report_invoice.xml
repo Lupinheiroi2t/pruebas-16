@@ -19,9 +19,15 @@
     </xpath>
 
 
-          <xpath expr="//td//span[@t-esc='tax_totals']" position="before">
+        <xpath expr="//tr[@class='border-black o_total']/td[@class='text-end']/.." position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+
+
+<!-- 
+          <xpath expr="//td/span[@t-esc='tax_totals']" position="before">
           <strong>(menos 6)</strong>
-            </xpath>
+            </xpath> -->
 
 
     
