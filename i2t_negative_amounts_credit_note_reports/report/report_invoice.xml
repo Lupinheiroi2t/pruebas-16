@@ -8,6 +8,12 @@
          <xpath expr="//td[hasclass('text-end')]" position="after">
               <strong>(++)</strong>
         </xpath>
+
+              
+         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
+              <strong>(+Lu)</strong>
+        </xpath>
+
 <!-- 
   <span t-att-class="oe_subtotal_footer_separator" t-esc="subtotal['formatted_amount']"/>
 
