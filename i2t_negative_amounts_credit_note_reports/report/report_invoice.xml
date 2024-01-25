@@ -5,14 +5,18 @@
     <template id="negative_amounts_credit_note_reports_invoice_document" name="negative.amounts.credit.note.reports.invoice.document" inherit_id="account.report_invoice_document" >
        
        
+         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="before">
+              <strong>(++)</strong>
+        </xpath>
+<!-- 
+  <span t-att-class="oe_subtotal_footer_separator" t-esc="subtotal['formatted_amount']"/>
+
+
          <xpath expr="//span[@t-field='o.amount_residual']" position="before">
             <span>(-)</span>
         </xpath>
-       
-        <xpath expr="//span[@t-field='o.amount_residual']" position="before">
-            <span t-if="negative_symbol">-</span>
-        </xpath>
-       
+        -->
+ 
        
        
         <!-- <xpath expr="//div[1]/h2" position="before">
