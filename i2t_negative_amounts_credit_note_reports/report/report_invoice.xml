@@ -14,7 +14,7 @@
               <strong>(menos)</strong>
         </xpath>
 
-      <xpath expr="//tr[hasclass('border-black o_total')]" position="after">
+      <xpath expr="//tr[@class('border-black o_total')]" position="after">
           <strong>(-)</strong>
     </xpath>
       
