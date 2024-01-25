@@ -18,10 +18,14 @@
               <strong>(menos)</strong>
         </xpath> -->
 
-          <xpath expr="//span[@t-if='formatted_amount_total_rounded']" position="before">
+          <xpath expr="//span[t-esc='tax_totals['formatted_amount_total_rounded']']" position="after">
               <strong>(menos)</strong>
         </xpath>
 
+<!-- <xpath expr="//span[t-esc='tax_totals['formatted_amount_total_rounded']']" position="after">
+    <!-- Tu nuevo contenido aquí -->
+    <span t-esc="tu_nueva_expresion" t-if="tu_condicion"/>
+</xpath> -->
 
 <!-- 
         <td class="text-end">
