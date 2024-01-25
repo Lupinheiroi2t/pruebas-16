@@ -14,12 +14,25 @@
               <strong>(menos)</strong>
         </xpath>
 
-      <xpath expr="//td[hasclass('text-end')]/td[3]" position="after">
+      <xpath expr="//tr[hasclass('border-black o_total')]" position="after">
           <strong>(-)</strong>
     </xpath>
       
 
      
+
+        
+            <!--Total amount with all taxes-->
+            <tr class="border-black o_total">
+                <td><strong>Total</strong></td>
+    
+                <td class="text-end">
+                    <strong>(-)</strong>
+                    <span t-esc="tax_totals['formatted_amount_total_rounded']" t-if="'formatted_amount_total_rounded' in tax_totals"/>
+                  
+                    <span t-esc="tax_totals['formatted_amount_total']" t-else=""/>
+                </td>
+            </tr>
 
 
 
