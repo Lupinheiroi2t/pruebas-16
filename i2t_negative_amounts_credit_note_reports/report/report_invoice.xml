@@ -31,9 +31,9 @@
         <xpath expr="//span[@t-field='o.amount_total']" position="before">
             <span t-if="negative_symbol">-</span>
         </xpath>
-        <xpath expr="//span[@t-field='o.amount_residual']" position="before">
+        <!-- <xpath expr="//span[@t-field='o.amount_residual']" position="before">
             <span t-if="negative_symbol">-</span>
-        </xpath>
+        </xpath> -->
         <xpath expr="//span[@t-esc='amount_by_group[3]']" position="before">
             <span t-if="negative_symbol">-</span>
         </xpath>
