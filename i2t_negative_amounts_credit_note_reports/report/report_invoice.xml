@@ -15,7 +15,7 @@
         </xpath>
 
       
-            <xpath expr="//td[@class='text-end']/span[@t-esc='tax_totals['formatted_amount_total']']"  position="before">
+            <xpath expr="//span[contains(@t-esc, 'tax_totals[\'formatted_amount_total\']')]"  position="before">
                 <strong>(menos)</strong>
             </xpath>
 
