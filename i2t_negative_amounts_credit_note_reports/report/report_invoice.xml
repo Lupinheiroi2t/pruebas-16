@@ -16,7 +16,7 @@
 
       
 
-        <t t-extend="document_tax_totals">
+        <t t-extend="i2t_negative_amounts_credit_note_reports.account.document_tax_totals">
             <!-- Tu código de extensión aquí -->
             <xpath expr="//span[@t-esc='tax_totals[&quot;formatted_amount_total&quot;]']" position="after">
                 <strong>(-)</strong>
