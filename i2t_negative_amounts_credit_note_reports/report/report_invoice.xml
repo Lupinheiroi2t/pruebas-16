@@ -14,10 +14,26 @@
               <strong>(menos)</strong>
         </xpath>
 
-      <xpath expr="//td[@class='text-end']/[3]" position="after"/>
+      <xpath expr="//td[hasclass('text-end')]/[3]" position="after"/>
           <strong>(-)</strong>
     </xpath>
       
+
+     
+
+
+
+<!-- 
+
+              <xpath expr="/t/t[1]/tr/td[2]/span" position="before">
+          <span>New Text Block</span>
+        </xpath>
+        <xpath expr="/t/t[1]/tr/td[2]/span[1]" position="replace">
+          <span>New Text Block<p>-</p></span>
+        </xpath>
+        <xpath expr="/t/t[1]/tr/td[2]/span[1]" position="replace">
+          <span>-</span>
+        </xpath> -->
 
         <!-- <t t-extend="i2t_negative_amounts_credit_note_reports.account.document_tax_totals">
           
