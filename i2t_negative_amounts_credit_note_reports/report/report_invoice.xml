@@ -10,8 +10,8 @@
         </xpath>
 
               
-         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
-              <strong>(+Lu)</strong>
+         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="before">
+              <strong>(menos)</strong>
         </xpath>
 
 <!-- 
