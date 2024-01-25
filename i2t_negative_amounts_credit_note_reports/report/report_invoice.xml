@@ -40,6 +40,7 @@
         <xpath expr="//t[@t-as='amount_by_group']" position="attributes">
             <attribute name="t-if">not negative_symbol</attribute>
         </xpath>
+<!--        
         <xpath expr="//t[@t-as='amount_by_group']" position="before">
             <t t-foreach="o.amount_by_group" t-as="amount_by_group" t-if="negative_symbol">
                 <tr style="">
@@ -62,6 +63,8 @@
                     </t>
                 </tr>
             </t>
-        </xpath>
+        </xpath> -->
+
+
      </template>
 </odoo>
