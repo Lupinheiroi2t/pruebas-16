@@ -25,9 +25,11 @@
 
         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
               <tr class="border-black o_total">
-                <td class="text-end">
-                  <strong>(-Lu-)</strong>
-                </td>
+                    <td><strong>Total</strong></td>
+                    <td class="text-end">
+                    <strong>(-Lu-)</strong>
+                    </td>
+            </tr> 
         </xpath>
 
 
