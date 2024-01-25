@@ -14,12 +14,11 @@
               <strong>(menos)</strong>
         </xpath>
 
-      <xpath expr="//tr[@class='border-black o_total']/td[@class='text-end']" position="after">
+      <xpath expr="//tr[@class='border-black o_total']/td[@class='text-end']/span[@t-if='formatted_amount_total_rounded']" position="after">
           <strong>(menos 2)</strong>
     </xpath>
       
 
-     
 
    
             <!-- <tr class="border-black o_total">
