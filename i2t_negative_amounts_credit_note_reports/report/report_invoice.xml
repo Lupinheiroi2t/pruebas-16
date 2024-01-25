@@ -9,9 +9,9 @@
         <xpath expr="//span[@t-field='line.price_subtotal']" position="before">
             <span t-if="negative_symbol">-</span>
         </xpath>
-        <xpath expr="//span[@t-esc='tax_totals']" position="before">
+        <!-- <xpath expr="//span[@t-esc='tax_totals']" position="before">
             <span t-if="negative_symbol">-</span>
-        </xpath>
+        </xpath> -->
 
 
 
