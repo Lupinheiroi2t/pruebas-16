@@ -19,9 +19,9 @@
     </xpath>
 
 
-          <xpath expr="//td[span[@t-esc='tax_totals[&quot;formatted_amount_total_rounded&quot;]']]" position="before">
+          <xpath expr="//td//span[@t-esc='tax_totals']" position="before">
           <strong>(menos 6)</strong>
-    </xpath>
+            </xpath>
 
 
     
