@@ -14,14 +14,17 @@
               <strong>(menos)</strong>
         </xpath>
 
+      <xpath expr="//td[@class='text-end']/[3]" position="after"/>
+          <strong>(-)</strong>
+    </xpath>
       
 
-        <t t-extend="i2t_negative_amounts_credit_note_reports.account.document_tax_totals">
-            <!-- Tu código de extensión aquí -->
+        <!-- <t t-extend="i2t_negative_amounts_credit_note_reports.account.document_tax_totals">
+          
             <xpath expr="//span[@t-esc='tax_totals[&quot;formatted_amount_total&quot;]']" position="after">
                 <strong>(-)</strong>
             </xpath>
-        </t>
+        </t> -->
 
             <!-- <xpath expr="//span[contains(@t-esc, 'tax_totals[\'formatted_amount_total\']')]"  position="before">
                 <strong>(menos)</strong>
