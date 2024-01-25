@@ -5,7 +5,7 @@
     <template id="negative_amounts_credit_note_reports_invoice_document" name="negative.amounts.credit.note.reports.invoice.document" inherit_id="account.report_invoice_document" >
        
        
-         <xpath expr="//span[@t-esc=subtotal['formatted_amount']]" position="before">
+         <xpath expr="//td[hasclass('text-end')]" position="after">
               <strong>(++)</strong>
         </xpath>
 <!-- 
