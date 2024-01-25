@@ -28,9 +28,9 @@
         <xpath expr="//t[@t-as='payment_vals']/tr[1]/td[2]/span[1]" position="before">
             <span t-if="negative_symbol">-</span>
         </xpath>
-        <xpath expr="//span[@t-field='o.amount_total']" position="before">
+        <!-- <xpath expr="//span[@t-field='o.amount_total']" position="before">
             <span t-if="negative_symbol">-</span>
-        </xpath>
+        </xpath> -->
         <!-- <xpath expr="//span[@t-field='o.amount_residual']" position="before">
             <span t-if="negative_symbol">-</span>
         </xpath> -->
