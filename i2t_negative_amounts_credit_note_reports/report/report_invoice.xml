@@ -4,30 +4,32 @@
 <odoo>
     <template id="negative_amounts_credit_note_reports_invoice_document" name="negative.amounts.credit.note.reports.invoice.document" inherit_id="account.document_tax_totals" >
        
-       
+<!--        
          <xpath expr="//td[hasclass('text-end')]" position="after">
               <strong>(++)</strong>
-        </xpath>
+        </xpath> -->
 
               
          <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="before">
               <strong>(menos)</strong>
         </xpath>
 
-<!-- 
-  <span t-att-class="oe_subtotal_footer_separator" t-esc="subtotal['formatted_amount']"/>
-
-
-         <xpath expr="//span[@t-field='o.amount_residual']" position="before">
-            <span>(-)</span>
+        <xpath expr="//span[@t-esc=tax_totals['formatted_amount_total_rounded']" position="before">
+              <strong>(menos)</strong>
         </xpath>
-        -->
- 
-       
-       
-        <!-- <xpath expr="//div[1]/h2" position="before">
-            <t t-set="negative_symbol" t-value="o.move_type == 'out_refund' and o.company_id.negative_amounts_credit_note"/>
-        </xpath> -->
+
+
+<!-- 
+        <td class="text-end">
+                    <strong>(-)</strong>
+                    <span t-esc="tax_totals['formatted_amount_total_rounded']" t-if="'formatted_amount_total_rounded' in tax_totals"/>
+                  
+                    <span t-esc="tax_totals['formatted_amount_total']" t-else=""/>
+                </td>
+
+               <td class="text-end">
+                    <span t-esc="tax_totals['formatted_amount_total']"/>
+                </td> -->
 
 
 
