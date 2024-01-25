@@ -34,6 +34,13 @@
 
         <!-- <t t-set="has_rounding" t-value="'formatted_amount_total_rounded' in tax_totals"/> -->
 
+
+    
+    <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
+                <strong>(menos)</strong>
+             <t t-set="has_rounding" t-value="'formatted_amount_total_rounded' in tax_totals"/> 
+        </xpath> 
+
         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
               <tr class="border-black o_total">
                     <td><strong>Total</strong></td>
