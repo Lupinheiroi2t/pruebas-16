@@ -14,14 +14,19 @@
               <strong>(menos)</strong>
         </xpath>
 
-      <xpath expr="//tr[@class='border-black o_total']/td[@class='text-end']" position="before">
-          <strong>(menos 3)</strong>
+      <xpath expr="//tr[@class='border-black o_total']/td[@class='text-end']/.." position="before">
+          <strong>(menos 4)</strong>
     </xpath>
-      
 
+    <!-- <xpath expr="//span[@class='border-black o_total']/td[@class='text-end']" position="before">
+          <strong>(menos 5)</strong>
+    </xpath>
+       -->
+    
+                    <!-- <span t-esc="tax_totals['formatted_amount_total']"
 
    
-            <!-- <tr class="border-black o_total">
+          <tr class="border-black o_total">
                 <td><strong>Total</strong></td>
     
                 <td class="text-end">
@@ -30,8 +35,8 @@
                   
                     <span t-esc="tax_totals['formatted_amount_total']" t-else=""/>
                 </td>
-            </tr> -->
-
+            </tr> 
+ -->
 
 
 <!-- 
