@@ -37,9 +37,11 @@
         <!-- <xpath expr="//span[@t-esc='amount_by_group[3]']" position="before">
             <span t-if="negative_symbol">-</span>
         </xpath> -->
-        <xpath expr="//t[@t-as='amount_by_group']" position="attributes">
+        <!-- <xpath expr="//t[@t-as='amount_by_group']" position="attributes">
             <attribute name="t-if">not negative_symbol</attribute>
-        </xpath>
+        </xpath> -->
+
+        
 <!--        
         <xpath expr="//t[@t-as='amount_by_group']" position="before">
             <t t-foreach="o.amount_by_group" t-as="amount_by_group" t-if="negative_symbol">
