@@ -15,7 +15,7 @@
         </xpath>
 
       <xpath expr="//tr[@class='border-black o_total']/td[@class='text-end']" position="after">
-          <strong>(-)</strong>
+          <strong>(menos 2)</strong>
     </xpath>
       
 
