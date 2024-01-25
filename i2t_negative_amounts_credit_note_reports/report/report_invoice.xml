@@ -20,9 +20,17 @@
         </xpath>
 
 
-      <xpath expr="//t[@t-set='has_rounding']" position="attributes">
+        <xpath expr="//t[@t-set='subtotal_to_show']" position="attributes">
             <attribute name="t-if">False</attribute>
-        </xpath>
+        </xpath> 
+
+             <!-- <t t-set="subtotal_to_show" t-value="subtotal['name']"/>    Untaxed Amount
+                <t t-call="account.tax_groups_totals"/>
+            </t> -->
+
+      <!-- <xpath expr="//t[@t-set='has_rounding']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath> -->
 
         <!-- <t t-set="has_rounding" t-value="'formatted_amount_total_rounded' in tax_totals"/> -->
 
