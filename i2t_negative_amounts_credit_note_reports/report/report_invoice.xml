@@ -14,14 +14,17 @@
               <strong>(menos)</strong>
         </xpath>
 
-      <xpath expr="//tr[@class='border-black o_total']/td[@class='text-end']/.." position="before">
-          <strong>(menos 5)</strong>
-        </xpath>
-
 
         <xpath expr="//tr[@class='border-black o_total']/td[@class='text-end']/.." position="attributes">
             <attribute name="t-if">False</attribute>
         </xpath>
+
+
+      <xpath expr="//t[@t-set='has_rounding']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+
+        <!-- <t t-set="has_rounding" t-value="'formatted_amount_total_rounded' in tax_totals"/> -->
 
         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
               <tr class="border-black o_total">
