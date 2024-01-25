@@ -24,24 +24,19 @@
             <attribute name="t-if">False</attribute>
         </xpath> 
 
-             <!-- <t t-set="subtotal_to_show" t-value="subtotal['name']"/>    Untaxed Amount
-                <t t-call="account.tax_groups_totals"/>
-            </t> -->
-
-      <!-- <xpath expr="//t[@t-set='has_rounding']" position="attributes">
-            <attribute name="t-if">False</attribute>
-        </xpath> -->
-
-        <!-- <t t-set="has_rounding" t-value="'formatted_amount_total_rounded' in tax_totals"/> -->
 
 
     
-    <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
+    <!-- <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
                 <strong>(menos)</strong>
-                 <t t-call="account.tax_groups_totals"/>
-        </xpath> 
+                <t t-call="account.tax_groups_totals"/>
+    </xpath>  -->
 
         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
+
+        <strong>(menos)</strong>
+                <t t-call="account.tax_groups_totals"/>
+
               <tr class="border-black o_total">
                     <td><strong>Total</strong></td>
                     <td class="text-end">
