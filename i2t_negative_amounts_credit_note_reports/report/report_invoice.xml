@@ -29,6 +29,7 @@
                     <td class="text-end">
                     <strong>(menos)</strong>
                     <span t-esc="tax_totals['formatted_amount_total_rounded']" t-if="'formatted_amount_total_rounded' in tax_totals"/>
+                        <span t-esc="tax_totals['formatted_amount_total']" t-else=""/>
                     </td>
             </tr> 
         </xpath>
