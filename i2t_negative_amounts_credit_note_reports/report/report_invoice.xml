@@ -27,7 +27,8 @@
               <tr class="border-black o_total">
                     <td><strong>Total</strong></td>
                     <td class="text-end">
-                    <strong>(-Lu-)</strong>
+                    <strong>(menos)</strong>
+                    <span t-esc="tax_totals['formatted_amount_total_rounded']" t-if="'formatted_amount_total_rounded' in tax_totals"/>
                     </td>
             </tr> 
         </xpath>
