@@ -14,12 +14,12 @@
               <strong>(menos)</strong>
         </xpath>
 
-        <t t-extend="path.to.parent.view">
-            <xpath expr="//span[@t-esc='tax_totals[&quot;formatted_amount_total&quot;]']" position="before">
+      
+            <xpath expr="//td[@class='text-end']/span[@t-esc='tax_totals[&quot;formatted_amount_total&quot;]']"  position="before">
                 <strong>(menos)</strong>
             </xpath>
 
-        </t>
+   
         <!-- <xpath expr="//span[@t-esc='tax_totals['formatted_amount_total']']" position="before">
               <strong>(menos)</strong>
         </xpath> -->
