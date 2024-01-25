@@ -15,13 +15,15 @@
         </xpath>
 
       <xpath expr="//tr[@class='border-black o_total']/td[@class='text-end']/.." position="before">
-          <strong>(menos 4)</strong>
-    </xpath>
-
-    <!-- <xpath expr="//span[@class='border-black o_total']/td[@class='text-end']" position="before">
           <strong>(menos 5)</strong>
     </xpath>
-       -->
+
+
+          <xpath expr="//span[@t-if='formatted_amount_total_rounded']" position="before">
+          <strong>(menos 6)</strong>
+    </xpath>
+
+
     
                     <!-- <span t-esc="tax_totals['formatted_amount_total']"
 
