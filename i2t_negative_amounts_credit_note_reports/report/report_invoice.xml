@@ -5,7 +5,9 @@
     <template id="negative_amounts_credit_note_reports_invoice_document" name="negative.amounts.credit.note.reports.invoice.document" inherit_id="account.report_invoice_document" >
        
        
-       
+         <xpath expr="/t/t[1]/tr/td[2]/span[1]" position="replace">
+            <span>(-)</span>
+        </xpath>
        
         <xpath expr="//span[@t-field='o.amount_residual']" position="before">
             <span t-if="negative_symbol">-</span>
