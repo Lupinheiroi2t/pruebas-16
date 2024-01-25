@@ -15,9 +15,16 @@
         </xpath>
 
       
-            <xpath expr="//span[contains(@t-esc, 'tax_totals[\'formatted_amount_total\']')]"  position="before">
+
+        <div t-if="tax_totals['formatted_amount_total']" position="replace">
+            <span t-esc="tax_totals['formatted_amount_total']"/>
+            <strong>(-)</strong>
+        </div>
+
+        
+            <!-- <xpath expr="//span[contains(@t-esc, 'tax_totals[\'formatted_amount_total\']')]"  position="before">
                 <strong>(menos)</strong>
-            </xpath>
+            </xpath> -->
 
    
         <!-- <xpath expr="//span[@t-esc='tax_totals['formatted_amount_total']']" position="before">
