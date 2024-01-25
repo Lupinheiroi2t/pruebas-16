@@ -21,9 +21,8 @@
 
      
 
-        
-            <!--Total amount with all taxes-->
-            <tr class="border-black o_total">
+   
+            <!-- <tr class="border-black o_total">
                 <td><strong>Total</strong></td>
     
                 <td class="text-end">
@@ -32,7 +31,7 @@
                   
                     <span t-esc="tax_totals['formatted_amount_total']" t-else=""/>
                 </td>
-            </tr>
+            </tr> -->
 
 
 
