@@ -22,24 +22,26 @@
         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
             <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
                 
-                    <t t-set="subtotal_to_show"  t-value="subtotal['name']"/>
+                    <!-- <t t-set="subtotal_to_show"  t-value="subtotal['name']"/>
 
                     <strong>(menos Lu)</strong>
 
                     <t t-call="account.tax_groups_totals"/>
-                </t>
-        
+                    </t>
+         -->
 
                 <tr class="border-black o_total">
                     <td><strong>Total</strong></td>
                     <td class="text-end">
                         <strong>(menos)</strong>
                         <span t-esc="tax_totals['formatted_amount_total_rounded']" t-if="'formatted_amount_total_rounded' in tax_totals"/>
-                        <!-- <span t-esc="tax_totals['formatted_amount_total']" t-else=""/> -->
+                        <span t-esc="tax_totals['formatted_amount_total']" t-else=""/>
                     </td>
                 </tr> 
         </xpath>
 
+   </template>
+</odoo>
 
 <!-- 
           <xpath expr="//td/span[@t-esc='tax_totals']" position="before">
@@ -94,9 +96,7 @@
 
 
     
-     </template>
-</odoo>
-
+  
 <!-- 
         <xpath expr="//span[@t-esc='tax_totals['formatted_amount_total_rounded']']" position="before">
               <strong>(menos)</strong>
