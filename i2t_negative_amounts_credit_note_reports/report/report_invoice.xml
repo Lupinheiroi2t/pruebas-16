@@ -24,12 +24,12 @@
                 
                      <t t-set="subtotal_to_show"  t-value="subtotal['name']"/>
 
-                    <strong>(menos Lu)</strong>
+             
 
-                    <t t-call="account.tax_groups_totals"/>
+                   
             </t>
          -->
-
+                <t t-call="account.tax_groups_totals"/>
                 <tr class="border-black o_total">
                     <td><strong>Total</strong></td>
                     <td class="text-end">
