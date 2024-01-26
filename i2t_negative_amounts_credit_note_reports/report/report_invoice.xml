@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2022 Ángel García de la Chica Herrera <angel.garcia@sygel.es>
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
+<odoo>
     <template id="negative_amounts_credit_note_reports_invoice_document" name="negative.amounts.credit.note.reports.invoice.document" inherit_id="account.document_tax_totals" >
 
         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="before">
@@ -59,4 +59,4 @@
         </xpath>
 
     </template>        
-
+</odoo>
