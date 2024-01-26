@@ -20,14 +20,14 @@
 
 
         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
-            <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+           <!-- <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
                 
-                    <!-- <t t-set="subtotal_to_show"  t-value="subtotal['name']"/>
+                     <t t-set="subtotal_to_show"  t-value="subtotal['name']"/>
 
                     <strong>(menos Lu)</strong>
 
                     <t t-call="account.tax_groups_totals"/>
-                    </t>
+            </t>
          -->
 
                 <tr class="border-black o_total">
