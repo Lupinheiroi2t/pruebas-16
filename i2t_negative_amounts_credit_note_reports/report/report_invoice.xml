@@ -58,5 +58,15 @@
             </t>
         </xpath>
 
-    </template>        
+    </template>   
+
+
+   
+    <template id="negative_amounts_credit_note_reports_invoice_tax_document" name="negative.amounts.credit.note.reports.invoice.document" inherit_id="account.tax_groups_totals" >
+        <xpath expr="//t[@t-as='amount_by_group']" position="after">
+              <strong>(Prueba taxas)</strong>
+        </xpath>
+    </template>
+
+
 </odoo>
