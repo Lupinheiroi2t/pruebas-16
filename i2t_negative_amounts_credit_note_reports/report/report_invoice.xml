@@ -34,10 +34,6 @@
 
         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
 
-            <t t-set="subtotal_to_show" t-value="subtotal['name']"/>    
-                <t t-call="account.tax_groups_totals"/>
-            </t>
-               
                 
             <t t-if="'formatted_rounding_amount' in tax_totals and tax_totals['rounding_amount'] != 0">
                 <td>Rounding</td>
