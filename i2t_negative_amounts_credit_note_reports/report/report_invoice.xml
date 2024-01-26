@@ -28,6 +28,7 @@
         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
 
         <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
+              <strong>(menos Lu)</strong>
                 <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
                 <t t-call="account.tax_groups_totals"/>
             </t>
