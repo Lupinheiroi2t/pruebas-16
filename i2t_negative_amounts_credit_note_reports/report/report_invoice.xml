@@ -25,27 +25,9 @@
         </xpath> 
 
 
-
-    
-    <!-- <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
-                <strong>(menos)</strong>
-                <t t-call="account.tax_groups_totals"/>
-    </xpath>  -->
-
         <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="after">
 
         <t t-foreach="tax_totals['subtotals']" t-as="subtotal">
-                <tr class="border-black o_subtotal">
-                    <td><strong t-esc="subtotal['name']"/></td>
-
-                    <td class="text-end">
-                        <span
-                            t-att-class="oe_subtotal_footer_separator"
-                            t-esc="subtotal['formatted_amount']"
-                        />
-                    </td>
-                </tr>
-
                 <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
                 <t t-call="account.tax_groups_totals"/>
             </t>
