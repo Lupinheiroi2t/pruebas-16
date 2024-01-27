@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2022 Ángel García de la Chica Herrera <angel.garcia@sygel.es>
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="negative_amounts_credit_note_reports_invoice_document" name="negative.amounts.credit.note.reports.invoice.document" inherit_id="account.document_tax_totals" >
+
+        <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="before">
+            <t t-if="o.move_type == 'out_refund' and o.company_id.negative_amounts_credit_note">
+             <strong>(menos)</strong> 
+            </t>
+        </xpath>
+        
+            
+         <xpath expr="//t[@t-set='subtotal_to_show']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>  
+        
+        <xpath expr="//t[@t-call='account.tax_groups_totals']" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>  
+
+        <xpath expr="//tr[@class='border-black o_total']/td[@class='text-end']/.." position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+        
+  
+        <xpath expr="//t[@t-call='account.tax_groups_totals']" position="after">
+            <t t-if="o.move_type == 'out_invoice' and o.company_id.negative_amounts_credit_note">
+             <!-- <td><strong>Taxas INVOICE</strong></td> -->
+              <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+              <t t-call="account.tax_groups_totals"/>
+            
+              <tr class="border-black o_total">
+                  <td><strong>Total</strong></td>
+                  <td class="text-end">
+                    <!--  <strong>(menos Invoice)</strong> -->
+                      <span t-esc="tax_totals['formatted_amount_total_rounded']" t-if="'formatted_amount_total_rounded' in tax_totals"/>
+                      <span t-esc="tax_totals['formatted_amount_total']" t-else=""/>
+                  </td>
+              </tr>
+             </t>
+        </xpath>
+        
+        
+        <xpath expr="//t[@t-call='account.tax_groups_totals']" position="after">
+            <t t-if="o.move_type == 'out_refund' and o.company_id.negative_amounts_credit_note">
+             <!-- <td><strong>Taxas RINVOICE</strong></td> -->
+             <t t-set="subtotal_to_show" t-value="subtotal['name']"/>
+            <t t-call="account.tax_groups_totals"/> 
+              
+              <tr class="border-black o_total">
+                  <td><strong>Total</strong></td>
+                  <td class="text-end">
+                      <strong>(menos)</strong>
+                      <span t-esc="tax_totals['formatted_amount_total_rounded']" t-if="'formatted_amount_total_rounded' in tax_totals"/>
+                      <span t-esc="tax_totals['formatted_amount_total']" t-else=""/>
+                  </td>
+              </tr>
+             </t>
+        </xpath>
+
+    </template>   
+
+
+   
+    <template id="negative_amounts_credit_note_reports_invoice_tax_document" name="negative.amounts.credit.note.reports.invoice.document" inherit_id="account.tax_groups_totals" >
+        <xpath expr="//tr" position="attributes">
+            <attribute name="t-if">False</attribute>
+        </xpath>
+        
+         <t t-foreach="tax_totals['groups_by_subtotal'][subtotal_to_show]" t-as="amount_by_group">
+                <tr>
+                    <t t-if="tax_totals['display_tax_base']">
+                        <td>
+                            <span t-esc="amount_by_group['tax_group_name']"/>
+                            <span class="text-nowrap"> on
+                                <t t-esc="amount_by_group['formatted_tax_group_base_amount']"/>
+                            </span>
+                        </td>
+                        <td class="text-end o_price_total">
+                          <strong>(menos)</strong>
+                            <span class="text-nowrap" t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                        </td>
+                    </t>
+
+                    <t t-else="">
+                        <td><span class="text-nowrap" t-esc="amount_by_group['tax_group_name']"/></td>
+                        <t t-if="o.move_type == 'out_refund' and o.company_id.negative_amounts_credit_note">
+                          <td class="text-end o_price_total">
+                              <strong>(menos)</strong>
+                              <span class="text-nowrap" t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                          </td>
+                        </t>
+                        <t t-else="">
+                            <t t-if="o.move_type == 'out_invoice' and o.company_id.negative_amounts_credit_note">
+                              <td class="text-end o_price_total">
+                                  <span class="text-nowrap" t-esc="amount_by_group['formatted_tax_group_amount']"/>
+                              </td>
+                            </t>
+                        </t>
+                    </t>
+                </tr>
+            </t>
+    </template>
+
+
+</odoo>
