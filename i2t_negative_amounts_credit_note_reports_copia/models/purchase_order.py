@@ -6,4 +6,3 @@ class PurchaseOrder(models.Model):
 
     move_type = fields.Selection(related='invoice_ids.move_type')
     
-  
