@@ -12,7 +12,7 @@
     "application": False,
     "installable": True,
     "depends": [
-        'account',
+        'account','sale','purchase',
     ],
     "data": [
         "report/report_invoice.xml",
