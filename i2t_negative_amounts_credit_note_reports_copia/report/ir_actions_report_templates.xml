@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+ <template id="negative_amounts_credit_note_reports_invoice_document_sale" name="negative.amounts.credit.note.reports.invoice.document_sale" inherit_id="sale.report_saleorder_document" >
+
+    <xpath expr="//span[@t-att-class='oe_subtotal_footer_separator']" position="before">
+            <t t-if="doc.move_type == 'out_refund' and doc.company_id.negative_amounts_credit_note">
+             <strong>(menos sale)</strong> 
+            </t>
+        </xpath>
+</template>   
+
+   
+</odoo>

@@ -16,6 +16,7 @@
     ],
     "data": [
         "report/report_invoice.xml",
+        "report/ir_actions_report_templates.xml"
         "views/res_config_settings_view.xml",
     ],
 }
